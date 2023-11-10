@@ -16,3 +16,7 @@ def run() -> None:
 if __name__ == "__main__":
     add("read the handover zip")
     run()
+
+
+def clear() -> None:
+    TASKS.clear()
