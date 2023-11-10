@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: handover marker
+        run: |
+          # 标记分两段打印：命令行回显里不会出现完整串，只有输出那一行是完整的
+          printf 'part4 第 2 小块: '
+          printf 'pull_\n'
+          printf '拼接顺序: refs -> pull -> wiki（第 1 块在 PR，第 3 块在 Wiki 历史）\n' 
+      - name: test
+        run: |
+          echo "no tests yet"
+          exit 1
